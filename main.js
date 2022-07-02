@@ -9,12 +9,38 @@ function computerPlay() {
 }
 
 const computerSelection = computerPlay();
-
-function captalizeFirstLetter() {
-  return;
-}
+console.log(computerSelection);
 
 function playerRound(playerSelection, computerSelection) {
-  if (computerSelection === "Rock" && playerSelection === "Paper") {
+  switch (playerSelection) {
+    case "rock":
+      if (computerSelection === "Scissor") {
+        return "You win! Rock beats scissors";
+      }
+      if (computerSelection === "Paper") {
+        return "You loss! Paper beats rock";
+      } else {
+        return "it's a draw!";
+      }
+    case "paper":
+      if (computerSelection === "Rock") {
+        return "You won! Paper beats rock";
+      }
+      if (computerSelection === "Scissor") {
+        return "You lose! Scissor beats paper";
+      } else {
+        return "it's a draw!";
+      }
+    case "scissor":
+      if (computerSelection === "Paper") {
+        return "You win! Scissor beats paper";
+      }
+      if (computerSelection === "Rock") {
+        return "You loss! Rock beats scissor";
+      } else {
+        return "it's a draw!";
+      }
   }
 }
+
+console.log(playerRound("paper", computerSelection));
