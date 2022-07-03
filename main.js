@@ -11,9 +11,6 @@ function computerPlay() {
   return rockPaperScissor[randomizer];
 }
 
-//storing computer's choice into computerSelection
-const computerSelection = computerPlay();
-
 //Logic with the input of the Player's choice and comparing it with the computers choice.
 function playerRound(playerSelection, computerSelection) {
   switch (playerSelection) {
@@ -51,6 +48,7 @@ function playerRound(playerSelection, computerSelection) {
 function game() {
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt(`choose between rock paper scissors`);
+    const computerSelection = computerPlay();
     console.log(
       `Computer chose: ${computerSelection} and you chose: ${playerSelection}`
     );
