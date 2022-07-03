@@ -1,15 +1,20 @@
 "use strict";
 
+//Rock, paper, scissor game
+//Computer's choices listed in the array
 const rockPaperScissor = [`Rock`, `Paper`, `Scissor`];
 
+//computerPlay counts the numbers in the array and randomizes that number
 function computerPlay() {
   let randomizer = Math.floor(Math.random() * rockPaperScissor.length);
-
+  //the randomizer will give rockPaperScissor a random position, thus giving a random selection in rockPaperScissor
   return rockPaperScissor[randomizer];
 }
 
+//storing computer's choice into computerSelection
 const computerSelection = computerPlay();
 
+//Logic with the input of the Player's choice and comparing it with the computers choice.
 function playerRound(playerSelection, computerSelection) {
   switch (playerSelection) {
     case "rock":
@@ -42,6 +47,7 @@ function playerRound(playerSelection, computerSelection) {
   }
 }
 
+//Loop to play game 5 times
 function game() {
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt(`choose between rock paper scissors`);
@@ -52,4 +58,5 @@ function game() {
   }
 }
 
+//Invoke game function
 game();
