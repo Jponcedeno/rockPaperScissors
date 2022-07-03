@@ -9,7 +9,6 @@ function computerPlay() {
 }
 
 const computerSelection = computerPlay();
-console.log(computerSelection);
 
 function playerRound(playerSelection, computerSelection) {
   switch (playerSelection) {
@@ -43,4 +42,14 @@ function playerRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(playerRound("paper", computerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt(`choose between rock paper scissors`);
+    console.log(
+      `Computer chose: ${computerSelection} and you chose: ${playerSelection}`
+    );
+    console.log(playerRound(playerSelection, computerSelection));
+  }
+}
+
+game();
